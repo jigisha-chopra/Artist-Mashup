@@ -79,7 +79,7 @@ def main(singer_name,n,duration,email):
     zip = zipfile.ZipFile("102003650.zip", "w", zipfile.ZIP_DEFLATED)
     zip.write("./final.mp3")
     zip.close()
-    fromaddr = "jchopra_be20@thapar.edu"
+    fromaddr = "Enter Email"
     toaddr = email
     msg = MIMEMultipart()
     msg['From'] = fromaddr
@@ -94,7 +94,7 @@ def main(singer_name,n,duration,email):
     msg.attach(p)
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
-    s.login(fromaddr, "JigishaChopra@27")
+    s.login(fromaddr, "Enter Password")
     text = msg.as_string()
     s.sendmail(fromaddr, toaddr, text)
     s.quit()
